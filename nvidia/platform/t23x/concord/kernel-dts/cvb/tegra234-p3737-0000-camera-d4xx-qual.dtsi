@@ -232,20 +232,22 @@
 				ser0_prim: max9295_prim@40 {
 					status = "ok";
 					reg = <0x40>;
-					compatible = "maxim,max9295_0";
+					compatible = "maxim,max9295";
 					is-prim-ser;
 				};
 
 				ser0_a: max9295_a@42 {
-					compatible = "maxim,max9295_0";
+					compatible = "maxim,max9295";
 					reg = <0x42>;
 					maxim,gmsl-dser-device = <&dser0>;
+                    prim-ser = <&ser0_prim>;
 				};
 
 				ser0_b: max9295_b@60 {
-					compatible = "maxim,max9295_0";
+					compatible = "maxim,max9295";
 					reg = <0x60>;
 					maxim,gmsl-dser-device = <&dser0>;
+                    prim-ser = <&ser0_prim>;
 				};
 
 				d4m0_depth: d4m0_depth@0a {
@@ -253,7 +255,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1a>;
 					reg = <0x0a>;
-					compatible = "intel,d4xx_0";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Depth";
 					maxim,gmsl-ser-device = <&ser0_a>;
@@ -299,7 +301,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1a>;
 					reg = <0x0c>;
-					compatible = "intel,d4xx_0";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Y8";
 					maxim,gmsl-ser-device = <&ser0_a>;
@@ -346,7 +348,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1b>;
 					reg = <0x2a>;
-					compatible = "intel,d4xx_1";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Depth";
 					maxim,gmsl-ser-device = <&ser0_b>;
@@ -392,7 +394,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1b>;
 					reg = <0x2c>;
-					compatible = "intel,d4xx_1";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Y8";
 					maxim,gmsl-ser-device = <&ser0_b>;
@@ -453,20 +455,22 @@
 				ser1_prim: max9295_prim@40 {
 					status = "ok";
 					reg = <0x40>;
-					compatible = "maxim,max9295_1";
-					is-prim-ser;
+					compatible = "maxim,max9295";
+                    is-prim-ser;
 				};
 
 				ser1_a: max9295_a@42 {
-					compatible = "maxim,max9295_1";
-					reg = <0x42>;
+					compatible = "maxim,max9295";
+                    reg = <0x42>;
 					maxim,gmsl-dser-device = <&dser1>;
+                    prim-ser = <&ser1_prim>;
 				};
 
 				ser1_b: max9295_b@60 {
-					compatible = "maxim,max9295_1";
+					compatible = "maxim,max9295";
 					reg = <0x60>;
 					maxim,gmsl-dser-device = <&dser1>;
+                    prim-ser = <&ser1_prim>;
 				};
 
 				d4m2_depth: d4m2_depth@0a {
@@ -474,7 +478,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1c>;
 					reg = <0x0a>;
-					compatible = "intel,d4xx_2";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Depth";
 					maxim,gmsl-ser-device = <&ser1_a>;
@@ -519,7 +523,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1c>;
 					reg = <0x0c>;
-					compatible = "intel,d4xx_2";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Y8";
 					maxim,gmsl-ser-device = <&ser1_a>;
@@ -566,7 +570,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1d>;
 					reg = <0x2a>;
-					compatible = "intel,d4xx_3";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Depth";
 					maxim,gmsl-ser-device = <&ser1_b>;
@@ -612,7 +616,7 @@
 					def-addr = <0x10>;
 					def-d4m-addr = <0x1d>;
 					reg = <0x2c>;
-					compatible = "intel,d4xx_3";
+					compatible = "intel,d4xx";
 					vcc-supply = <&p3737_vdd_1v8_sys>;
 					cam-type = "Y8";
 					maxim,gmsl-ser-device = <&ser1_b>;
